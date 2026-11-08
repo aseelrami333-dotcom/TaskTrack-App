@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrack - Task Manager</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .task-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+            background: #2563eb;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin-top: 12px;
+            background: #f4f6f9;
+            border-radius: 6px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .complete-btn {
+            background: #16a34a;
+        }
+
+        .delete-btn {
+            background: #dc2626;
+        }
+
+        .empty {
+            text-align: center;
+            color: #888;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>TaskTrack</h1>
+
+        <p class="description">
+            Organize your tasks and manage your daily activities.
+        </p>
+
+        <form class="task-form" action="/add" method="POST">
+            <input type="text" name="task"
+                   placeholder="Enter a new task..." required>
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div class="task-list">
+
+            {% for task in tasks %}
+
+                <div class="task">
+
+                    <span class="{% if task.completed %}completed{% endif %}">
+                        {{ task.name }}
+                    </span>
+
+                    <div class="actions">
+
+                        {% if not task.completed %}
+                            <a href="{{ url_for('complete_task', task_id=loop.index0) }}">
+                                <button class="complete-btn">Done</button>
+                            </a>
+                        {% endif %}
+
+                        <a href="{{ url_for('delete_task', task_id=loop.index0) }}">
+                            <button class="delete-btn">Delete</button>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <p class="empty">No tasks yet. Add your first task!</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
