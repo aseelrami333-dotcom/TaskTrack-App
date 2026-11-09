@@ -80,3 +80,46 @@ The following screenshots show the application and Docker setup.
 ### 6. GitHub Commits History
 
 ![GitHub Commits History](docs/screenshots/github-commits-history.png)
+
+## How to Stop the Container
+
+To stop the running container, use:
+
+```bash
+docker stop tasktrack-container
+```
+
+## How to Clean Up
+
+To remove the stopped container, use:
+
+```bash
+docker rm tasktrack-container
+```
+
+To remove the Docker image, use:
+
+```bash
+docker rmi tasktrack-app
+```
+
+## Application Testing
+
+After starting the container, open the following URL in your browser:
+
+http://localhost:5000
+
+The application can be tested by performing the following actions:
+
+- Add a new task.
+- Mark a task as completed.
+- Delete a task.
+
+These tests help verify that the main application features are working correctly.
+
+## Configuration
+
+- Application port: 5000
+- Docker port mapping: 5000:5000
+- Container name: tasktrack-container
+- Docker image name: tasktrack-app
