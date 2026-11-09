@@ -1,4 +1,4 @@
-# TaskTrack App
+﻿# TaskTrack App
 
 ## About the Project
 
@@ -43,8 +43,10 @@ docker build -t tasktrack-app .
 
 Run the container:
 
-```bash
-docker run -d -p 5000:5000 --name tasktrack-container tasktrack-app
+```powershell
+docker run -d -p 5000:5000 `
+  --name tasktrack-container `
+  tasktrack-app
 ```
 
 Open the application in your browser:
@@ -53,11 +55,28 @@ http://localhost:5000
 
 ## Screenshots
 
-The following screenshots show the application and Docker setup:
+The following screenshots show the application and Docker setup.
 
-- Project working: docs/screenshots/project-working.png
-- Docker build: docs/screenshots/docker-build-success.png
-- Docker container running: docs/screenshots/container-running.png
-- Docker project: docs/screenshots/docker-project-working.png
-- GitHub commits: docs/screenshots/github-commits.png
-- GitHub commits history: docs/screenshots/github-commits-history.png
+### 1. Project Working
+
+![Project Working](docs/screenshots/project-working.png)
+
+### 2. Docker Build
+
+![Docker Build](docs/screenshots/docker-build-success.png)
+
+### 3. Docker Container Running
+
+![Docker Container Running](docs/screenshots/container-running.png)
+
+### 4. Docker Project
+
+![Docker Project](docs/screenshots/docker-project-working.png)
+
+### 5. GitHub Commits
+
+![GitHub Commits](docs/screenshots/github-commits.png)
+
+### 6. GitHub Commits History
+
+![GitHub Commits History](docs/screenshots/github-commits-history.png)
