@@ -1,0 +1,7 @@
+﻿services:
+  tasktrack:
+    build: .
+    container_name: tasktrack-container
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
