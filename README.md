@@ -75,10 +75,10 @@ The following screenshots show the application and Docker setup.
 
 ### 5. GitHub Commits
 
-![GitHub Commits](docs/screenshots/github-commits-updated.png)
+![GitHub Commits](docs/screenshots/github-commits.png)
 ### 6. GitHub Commits History
 
-![GitHub Commits History](docs/screenshots/github-commits-history-updated.png)
+![GitHub Commits History](docs/screenshots/github-commits-history.png)
 ## How to Stop the Container
 
 To stop the running container, use:
