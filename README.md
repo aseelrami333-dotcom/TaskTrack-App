@@ -75,7 +75,7 @@ The following screenshots show the application and Docker setup.
 
 ### 5. GitHub Commits
 
-![GitHub Commits History](docs/screenshots/github-commits-history-updated.png)
+![GitHub Commits](docs/screenshots/github-commits-updated.png)
 ### 6. GitHub Commits History
 
 ![GitHub Commits History](docs/screenshots/github-commits-history-updated.png)
