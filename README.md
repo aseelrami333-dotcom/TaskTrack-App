@@ -18,17 +18,23 @@ I built this project using Python and Flask, and used Docker to run the applicat
 
 ```text
 TaskTrack-App/
-|-- src/
-|   |-- app.py
-|   |-- templates/
-|       |-- index.html
-|-- docs/
-|   |-- screenshots/
-|-- Dockerfile
-|-- .dockerignore
-|-- .gitignore
-|-- requirements.txt
-|-- README.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── docs/
+│   ├── screenshots/
+│   └── notes.md
+├── src/
+│   ├── app.py
+│   └── templates/
+│       └── index.html
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── Makefile
+├── README.md
+└── requirements.txt
 ```
 
 ## How to Run the Project
@@ -212,4 +218,5 @@ A successful workflow run confirms that the Docker configuration is valid and th
 ### 9. GitHub Actions CI
 
 ![GitHub Actions Success](docs/screenshots/github-actions-success.png)
+
 
