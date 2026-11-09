@@ -121,3 +121,95 @@ These tests help verify that the main application features are working correctly
 - Docker port mapping: 5000:5000
 - Container name: tasktrack-container
 - Docker image name: tasktrack-app
+
+## Docker Compose
+
+Docker Compose makes it easier to build and run the application using a single command.
+
+Build and start the application:
+
+```bash
+docker compose up --build -d
+```
+
+Check the running container:
+
+```bash
+docker compose ps
+```
+
+View application logs:
+
+```bash
+docker compose logs
+```
+
+Stop the application:
+
+```bash
+docker compose down
+```
+
+## Healthcheck
+
+The Dockerfile includes a HEALTHCHECK instruction to automatically monitor the application.
+
+Docker checks the application every 30 seconds to make sure it is responding.
+
+To check the container health status, use:
+
+```bash
+docker ps
+```
+
+A healthy application displays the status:
+
+```text
+Up (healthy)
+```
+
+## Makefile
+
+The project includes a Makefile to simplify common Docker commands.
+
+The following commands are available:
+
+| Command | Description |
+|---|---|
+| `make up` | Build and start the application |
+| `make down` | Stop and remove containers |
+| `make build` | Build the Docker image |
+| `make logs` | Display application logs |
+| `make ps` | Display container status |
+| `make clean` | Stop containers and remove the local image |
+
+GNU Make must be installed to use these commands.
+
+## GitHub Actions CI
+
+The project uses GitHub Actions for Continuous Integration (CI).
+
+The workflow is triggered automatically when changes are pushed to the main branch or when a pull request targets main.
+
+The workflow performs the following steps:
+
+1. Checks out the repository.
+2. Validates the Docker Compose configuration.
+3. Builds the Docker image.
+
+A successful workflow run confirms that the Docker configuration is valid and the image can be built.
+
+## Additional Screenshots
+
+### 7. Healthcheck Status
+
+![Healthcheck Healthy](docs/screenshots/healthcheck-healthy.png)
+
+### 8. Makefile Execution
+
+![Makefile Success](docs/screenshots/makefile-up-success.png)
+
+### 9. GitHub Actions CI
+
+![GitHub Actions Success](docs/screenshots/github-actions-success.png)
+
